@@ -5,7 +5,7 @@ const Form = () => {
     const[content,bindContent,clearContent]=useInput()
     const submitHandler=(event)=>{
         event.preventDefault()
-        console.log(title)
+        console.log({title})
         console.log(content)
         clearTitle()
         clearContent()
@@ -13,18 +13,19 @@ const Form = () => {
     }
     return (
         <div className="section">
-            <form action=''>
+            <form onSubmit={submitHandler} className='white'>
+                <h5 className="grey-text text-darken-2">New Notes</h5>
                 {/* <div className="row"> */}
 
                     <div className="input-field">
                         <input {...bindTitle} id="note_title" type="text" className="validate"/>
-                        <label className="active" for="note_title">Note title</label>
+                        <label className="active" htmlFor="note_title">Note title</label>
                     </div>
                     <div className="input-field">
                         <textarea {...bindContent} id="note_content" className="materialize-textarea"></textarea>
-                        <label for="note_content">note content</label>
+                        <label htmlFor="note_content">note content</label>
                     </div>
-                   <button className='btn-green'>Add</button>
+                    <button className=" waves-light btn green">button</button>
                 {/* </div>    */}
             </form>
         </div>
