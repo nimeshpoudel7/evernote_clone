@@ -1,9 +1,9 @@
-export const addNote=(note)=>{
+export const addNote=(nota)=>{
     return (dispatch, getState,{getFirestore})=>{
         const firestore=getFirestore()
         firestore.collection('notes')
         .add({
-            ...note,
+            ...nota,
             favorite:false,
             createdAt:new Date()
         })
@@ -15,5 +15,19 @@ export const addNote=(note)=>{
         })
     }
 
+
+}
+export const deleteNote=(deleteValue)=>{
+    return (dispatch, getState,{getFirestore})=>{
+        const firestore=getFirestore()
+        firestore.collection('notes').doc(deleteValue.id).delete()
+      
+        .then(() =>{
+            console.log('done complete')
+        } )
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
 
 }

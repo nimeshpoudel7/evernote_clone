@@ -2,6 +2,7 @@ import React from 'react'
 import Form from './Form'
 import { useSelector } from 'react-redux'
 import {useFirestoreConnect } from 'react-redux-firebase'
+import NoteList from './../notes/NoteList';
 const Home = () => {
     useFirestoreConnect({ collection: 'notes', orderBy: ['createdAt', 'desc'] })
     const notes = useSelector((state) => state.firestore.ordered.notes);
@@ -14,7 +15,14 @@ const Home = () => {
                     <Form/>
                 </div>
                 <div className="col s5">
-                    Notelist
+                    <NoteList  noteValue={notes}/>
+                    {/* <div>
+            {notes?(notes.map((notepara)=>{
+                consol
+                return notepara.title
+            })):('hey nothig foune')}
+            
+        </div> */}
                 </div>
             </div>
         </div>
