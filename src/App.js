@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/home/Home";
 import Favorites from "./components/notes/Favorites";
+import NoteDetails from "./components/notes/NoteDetails";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route component={Favorites} />
+        <Route exact path='/favorite' component={Favorites} />
+        <Route path='/note/:id' component={NoteDetails} />
       </Switch>
     </Router>
   );

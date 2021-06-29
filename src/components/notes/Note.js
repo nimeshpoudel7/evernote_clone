@@ -3,6 +3,7 @@ import { deleteNote } from "../../store/action/noteAction";
 import { useDispatch } from "react-redux";
 import { favNotes } from "../../store/action/noteAction";
 import moment from "moment";
+import { Link } from "react-router-dom";
 const Note = ({ notevaluefromlist }) => {
   // console.log(notevaluefromlist.favorite)
   const dispatch = useDispatch();
@@ -30,7 +31,9 @@ const Note = ({ notevaluefromlist }) => {
           delete_forever
         </i>
       </div>
-      <h5 className='black-text'>{notevaluefromlist.title}</h5>
+      <Link to={"/note/" + notevaluefromlist.id}>
+        <h5 className='black-text'>{notevaluefromlist.title}</h5>
+      </Link>
       <p className='turncate'>{notevaluefromlist.content}</p>
       <p className='grey-text'>
         {moment(notevaluefromlist.createdAt.toDate()).fromNow()}
