@@ -39,9 +39,9 @@ const Note = ({ notevaluefromlist }) => {
         {moment(notevaluefromlist.createdAt.toDate()).fromNow()}
       </p>
       <div className='right-align'>
-        <i className='material-icons ' style={{ cursor: "pointer" }}>
+       <Link to={`/Editform/${notevaluefromlist.id}`}> <i className='material-icons black-text ' style={{ cursor: "pointer" }}>
           edit
-        </i>
+        </i></Link>
       </div>
     </div>
   );
