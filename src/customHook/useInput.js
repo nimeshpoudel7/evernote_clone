@@ -1,8 +1,8 @@
 
 import {useState} from 'react'
 
-const useInput = (initialState) => {
-    const [input, setInput] = useState(initialState='')
+const useInput = (initialState="") => {
+    const [input, setInput] = useState(initialState)
     const clearInput = ()=>{
         setInput(initialState)
     }

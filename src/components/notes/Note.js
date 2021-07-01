@@ -13,6 +13,9 @@ const Note = ({ notevaluefromlist }) => {
   const favHandler = () => {
     dispatch(favNotes(notevaluefromlist));
   };
+  const EditnoteHandler=()=>{
+    dispatch({type:'Edit_note',payload:notevaluefromlist})
+  }
   console.log(notevaluefromlist.favorite);
   const favMarkup = notevaluefromlist.favorite ? "favorite" : "favorite_border";
   return (
@@ -39,7 +42,7 @@ const Note = ({ notevaluefromlist }) => {
         {moment(notevaluefromlist.createdAt.toDate()).fromNow()}
       </p>
       <div className='right-align'>
-       <Link to={`/Editform/${notevaluefromlist.id}`}> <i className='material-icons black-text ' style={{ cursor: "pointer" }}>
+       <Link to={`/Editform/${notevaluefromlist.id}`}> <i className='material-icons black-text 'onClick={EditnoteHandler} style={{ cursor: "pointer" }}>
           edit
         </i></Link>
       </div>

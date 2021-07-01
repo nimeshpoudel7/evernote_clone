@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/home/Home";
 import Favorites from "./components/notes/Favorites";
 import NoteDetails from "./components/notes/NoteDetails";
-import Editform from "./components/notes/Editform";
+import Editform from "./components/notes/EditForm";
 function App() {
   return (
     <Router>
